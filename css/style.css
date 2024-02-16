@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    /* ------------------color------------------ */
+    --dark: #082032;
+    --gray: #2c394b;
+    --light_gray: #334756;
+    --orange: #ff4c29;
+    --white: whitesmoke;
+
+    /* ------------------transition------------------ */
+    --time: 0.3s;
+
+    /* ------------------width and height------------------ */
+    --header_height: 60px;
+    
+    /* ------------------border------------------ */
+    --border_thin: 1px;
+    --border_regular: 2px;
+    --border_bold: 4px;
+    --border_bold_negative: -4px;
+
+    /* ------------------shadow------------------ */
+    --box_shadow: 1px 1px 15px 1px #000000;
+
+    /* ------------------margin and padding------------------ */
+    --small: 1rem;
+    --regular: 1.5rem;
+    --large: 3rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    cursor: url(../images/cursor.png), auto;
+    font-family: "Press Start 2P", cursive;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--small);
+}
+
+header img {
+    height: var(--header_height);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    padding-left: var(--large);
+    color: var(--white);
+}
+
+.show {
+    visibility: visible;
+}
+
+#btn_menu {
+    color: var(--white);
+    display: none;
+}
+
+main {
+    height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --header_height: 50px;
+    }
+    
+    nav {
+        position: absolute;
+        top: calc(var(--header_height) + 2*var(--small));
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header_height));
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(var(--gray), 0.2);
+        backdrop-filter: blur(10px);
+        visibility: hidden;
+    }
+
+    nav li {
+        color: var(--dark);
+        /* padding-top: var(--regular); */
+    }
+
+    #btn_menu {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    :root {
+        --header_height: 30px;
+        --small: 0.8rem;
+    }
+}
