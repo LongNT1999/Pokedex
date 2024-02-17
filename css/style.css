@@ -7,18 +7,23 @@
     --light_gray: #334756;
     --orange: #ff4c29;
     --white: whitesmoke;
+    --pink: #FE37F7;
 
     /* ------------------transition------------------ */
     --time: 0.3s;
 
     /* ------------------width and height------------------ */
     --header_height: 60px;
-    
+    --card_width: 200px;
+    --card_height: 250px;
+    --font_size: 16px;
+
     /* ------------------border------------------ */
     --border_thin: 1px;
     --border_regular: 2px;
     --border_bold: 4px;
     --border_bold_negative: -4px;
+    --border_radius: 5px;
 
     /* ------------------shadow------------------ */
     --box_shadow: 1px 1px 15px 1px #000000;
@@ -38,6 +43,7 @@
 html {
     cursor: url(../images/cursor.png), auto;
     font-family: "Press Start 2P", cursive;
+    font-size: var(--font_size);
 }
 
 li {
@@ -65,6 +71,8 @@ header img {
 nav {
     display: flex;
     align-items: center;
+    transition: var(--time);
+    z-index: -10;
 }
 
 nav li {
@@ -72,8 +80,13 @@ nav li {
     color: var(--white);
 }
 
+nav li:hover {
+    color: var(--orange);
+}
+
 .show {
-    visibility: visible;
+    /* visibility: visible; */
+    bottom: -100vh;
 }
 
 #btn_menu {
@@ -82,25 +95,67 @@ nav li {
 }
 
 main {
-    height: 100vh;
+    padding: 0 var(--regular);
+}
+
+#type {
+    width: 100%;
+    background: var(--light_gray);
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    width: var(--card_width);
+    height: var(--card_height);
+    border: var(--border_bold) solid var(--gray);
+    border-radius: var(--border_radius);
+    box-sizing: border-box;
+    margin: var(--small);
+    padding: var(--small);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    /* width: var(--card_width); */
+}
+
+.card li {
+    position: relative;
+    z-index: -1;
+}
+
+.card li i {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pink {
+    color: var(--pink);
 }
 
 @media only screen and (max-width: 768px) {
     :root {
         --header_height: 50px;
     }
-    
+
     nav {
         position: absolute;
-        top: calc(var(--header_height) + 2*var(--small));
+        bottom: 100vh;
         left: 0;
         width: 100%;
-        height: calc(100vh - var(--header_height));
+        height: 100vh;
         flex-direction: column;
         justify-content: space-evenly;
-        background-color: rgba(var(--gray), 0.2);
+        /* background-color: rgba(var(--gray), 0.2); */
         backdrop-filter: blur(10px);
-        visibility: hidden;
     }
 
     nav li {
@@ -113,9 +168,13 @@ main {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-device-width: 425px) {
+
     :root {
         --header_height: 30px;
-        --small: 0.8rem;
+        --card_width: 150px;
+        --card_height: 200px;
+        --small: 0.5rem;
+        --font_size: 13px;
     }
 }
