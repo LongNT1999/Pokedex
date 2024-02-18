@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('button.css');
 
 :root {
     /* ------------------color------------------ */
@@ -26,14 +27,14 @@
     --border_radius: 5px;
 
     /* ------------------shadow------------------ */
-    --box_shadow: 1px 1px 15px 1px #000000;
+    --box_shadow: 5px 5px 10px 0px #000000;
+    --box_shadow_hover: 3px 3px 10px 1px #ff4c29;
 
     /* ------------------margin and padding------------------ */
-    --small: 1rem;
+    --small: 0.7rem;
     --regular: 1.5rem;
     --large: 3rem;
 }
-
 
 * {
     margin: 0;
@@ -62,6 +63,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--small);
+    z-index: 10;
 }
 
 header img {
@@ -99,14 +101,21 @@ main {
 }
 
 #type {
-    width: 100%;
-    background: var(--light_gray);
+    /* width: 100%; */
+    margin-bottom: var(--regular);
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: var(--regular);
+    padding: var(--regular) 0;
+    border-bottom: var(--border_thin) solid var(--dark);
 }
 
 section {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    gap: var(--small);
 }
 
 .card {
@@ -114,27 +123,43 @@ section {
     height: var(--card_height);
     border: var(--border_bold) solid var(--gray);
     border-radius: var(--border_radius);
+    box-shadow: var(--box_shadow);
     box-sizing: border-box;
-    margin: var(--small);
+    /* margin: var(--small); */
     padding: var(--small);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    transition: var(--time);
+}
+
+.card:hover {
+    cursor: url("../images/hover.png"), auto;
+    box-shadow: var(--box_shadow_hover);
+}
+
+.card:hover img {
+    transform: scale(1.2);
 }
 
 .card img {
     /* width: var(--card_width); */
+    transition: var(--time);
 }
 
 .card li {
-    position: relative;
-    z-index: -1;
+    text-align: center;
+}
+
+.card li span {
+    text-overflow: ellipsis;
 }
 
 .card li i {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: var(--small);
+    right: var(--small);
 }
 
 .pink {

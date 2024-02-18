@@ -1,0 +1,401 @@
+:root {
+    --normal: #a8a878;
+    --normal_hover: #9c9c63;
+    --normal_line: #7c7c50;
+
+    --fighting: #c84337;
+    --fighting_hover: #b2453b;
+    --fighting_line: #903028;
+
+    --flying: #a890f0;
+    --flying_hover: #8462ea;
+    --flying_line: #724be7;
+
+    --poison: #a040a0;
+    --poison_hover: #803380;
+    --poison_line: #6d2c6d;
+
+    --ground: #e0c068;
+    --ground_hover: #d8b041;
+    --ground_line: #d4a72b;
+
+    --rock: #b09936;
+    --rock_hover: #9c8830;
+    --rock_line: #756624;
+
+    --bug: #a8b820;
+    --bug_hover: #8b981b;
+    --bug_line: #636c13;
+
+    --ghost: #705898;
+    --ghost_hover: #604a82;
+    --ghost_line: #483861;
+
+    --steel: #b8b8d0;
+    --steel_hover: #a3a3c2;
+    --steel_line: #8585ad;
+
+    --fire: #f05030;
+    --fire_hover: #ed3612;
+    --fire_line: #be2c0e;
+
+    --water: #5d88ef;
+    --water_hover: #4578ed;
+    --water_line: #1756e8;
+
+    --grass: #78c850;
+    --grass_hover: #5fae37;
+    --grass_line: #4a882b;
+
+    --electric: #f8d030;
+    --electric_hover: #f6c709;
+    --electric_line: #c59f07;
+
+    --psychic: #f85888;
+    --psychic_hover: #f73b73;
+    --psychic_line: #f62362;
+
+    --ice: #98d8d8;
+    --ice_hover: #7ecece;
+    --ice_line: #59c0c0;
+
+    --dragon: #7038f8;
+    --dragon_hover: #5009f6;
+    --dragon_line: #4007c5;
+
+    --dark: #394960;
+    --dark_hover: #2c394b;
+    --dark_line: #1c2530;
+
+    --fairy: #f8a0e0;
+    --fairy_hover: #f471d1;
+    --fairy_line: #f141c2;
+
+    --unknown: #68a090;
+    --unknown_hover: #588d7e;
+    --unknown_line: #456e62;
+
+    --shadow: #662d67;
+    --shadow_hover: #461f47;
+    --shadow_line: #351735;
+}
+
+#type button {
+    /* background: none; */
+    padding: var(--small);
+    font: inherit;
+    font-size: var(--small);
+    border: none;
+    box-shadow: var(--box_shadow);
+    position: relative;
+    transition: var(--time);
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+#type button:hover {
+    cursor: url("../images/hover.png"), auto;
+    text-shadow: 1px 1px 3px var(--white);
+}
+
+#type button::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 5px 0px 0px 0px var(--dark), 0px 5px 0px 0px var(--dark), -5px 0px 0px 0px var(--dark), 0px -5px 0px 0px var(--dark);
+}
+
+#type button::after {
+    content: "";
+    width: 100%;
+    height: calc(100% - 5px);
+    background: transparent;
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    /* box-shadow: 5px 0px 0px 0px var(--orange), 5px 5px 0px 0px var(--orange); */
+}
+
+/* type: normal */
+.normal {
+    background: var(--normal);
+}
+
+.normal::after {
+    box-shadow: 5px 0px 0px 0px var(--normal_line), 5px 5px 0px 0px var(--normal_line);
+}
+
+.normal:hover {
+    background-color: var(--normal_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--normal_hover) !important;
+}
+
+/* type: fighting */
+.fighting {
+    background: var(--fighting);
+}
+
+.fighting::after {
+    box-shadow: 5px 0px 0px 0px var(--fighting_line), 5px 5px 0px 0px var(--fighting_line);
+}
+
+.fighting:hover {
+    background-color: var(--fighting_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--fighting_hover) !important;
+}
+
+/* type: flying */
+.flying {
+    background: var(--flying);
+}
+
+.flying::after {
+    box-shadow: 5px 0px 0px 0px var(--flying_line), 5px 5px 0px 0px var(--flying_line);
+}
+
+.flying:hover {
+    background-color: var(--flying_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--flying_hover) !important;
+}
+
+/* type: poison */
+.poison {
+    background: var(--poison);
+}
+
+.poison::after {
+    box-shadow: 5px 0px 0px 0px var(--poison_line), 5px 5px 0px 0px var(--poison_line);
+}
+
+.poison:hover {
+    background-color: var(--poison_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--poison_hover) !important;
+}
+
+/* type: ground */
+.ground {
+    background: var(--ground);
+}
+
+.ground::after {
+    box-shadow: 5px 0px 0px 0px var(--ground_line), 5px 5px 0px 0px var(--ground_line);
+}
+
+.ground:hover {
+    background-color: var(--ground_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--ground_hover) !important;
+}
+
+/* type: rock */
+.rock {
+    background: var(--rock);
+}
+
+.rock::after {
+    box-shadow: 5px 0px 0px 0px var(--rock_line), 5px 5px 0px 0px var(--rock_line);
+}
+
+.rock:hover {
+    background-color: var(--rock_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--rock_hover) !important;
+}
+
+/* type: bug */
+.bug {
+    background: var(--bug);
+}
+
+.bug::after {
+    box-shadow: 5px 0px 0px 0px var(--bug_line), 5px 5px 0px 0px var(--bug_line);
+}
+
+.bug:hover {
+    background-color: var(--bug_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--bug_hover) !important;
+}
+
+/* type: ghost */
+.ghost {
+    background: var(--ghost);
+}
+
+.ghost::after {
+    box-shadow: 5px 0px 0px 0px var(--ghost_line), 5px 5px 0px 0px var(--ghost_line);
+}
+
+.ghost:hover {
+    background-color: var(--ghost_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--ghost_hover) !important;
+}
+
+/* type: steel */
+.steel {
+    background: var(--steel);
+}
+
+.steel::after {
+    box-shadow: 5px 0px 0px 0px var(--steel_line), 5px 5px 0px 0px var(--steel_line);
+}
+
+.steel:hover {
+    background-color: var(--steel_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--steel_hover) !important;
+}
+
+/* type: fire */
+.fire {
+    background: var(--fire);
+}
+
+.fire::after {
+    box-shadow: 5px 0px 0px 0px var(--fire_line), 5px 5px 0px 0px var(--fire_line);
+}
+
+.fire:hover {
+    background-color: var(--fire_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--fire_hover) !important;
+}
+
+/* type: water */
+.water {
+    background: var(--water);
+}
+
+.water::after {
+    box-shadow: 5px 0px 0px 0px var(--water_line), 5px 5px 0px 0px var(--water_line);
+}
+
+.water:hover {
+    background-color: var(--water_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--water_hover) !important;
+}
+
+/* type: grass */
+.grass {
+    background: var(--grass);
+}
+
+.grass::after {
+    box-shadow: 5px 0px 0px 0px var(--grass_line), 5px 5px 0px 0px var(--grass_line);
+}
+
+.grass:hover {
+    background-color: var(--grass_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--grass_hover) !important;
+}
+
+/* type: electric */
+.electric {
+    background: var(--electric);
+}
+
+.electric::after {
+    box-shadow: 5px 0px 0px 0px var(--electric_line), 5px 5px 0px 0px var(--electric_line);
+}
+
+.electric:hover {
+    background-color: var(--electric_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--electric_hover) !important;
+}
+
+/* type: psychic */
+.psychic {
+    background: var(--psychic);
+}
+
+.psychic::after {
+    box-shadow: 5px 0px 0px 0px var(--psychic_line), 5px 5px 0px 0px var(--psychic_line);
+}
+
+.psychic:hover {
+    background-color: var(--psychic_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--psychic_hover) !important;
+}
+
+/* type: ice */
+.ice {
+    background: var(--ice);
+}
+
+.ice::after {
+    box-shadow: 5px 0px 0px 0px var(--ice_line), 5px 5px 0px 0px var(--ice_line);
+}
+
+.ice:hover {
+    background-color: var(--ice_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--ice_hover) !important;
+}
+
+/* type: dragon */
+.dragon {
+    background: var(--dragon);
+}
+
+.dragon::after {
+    box-shadow: 5px 0px 0px 0px var(--dragon_line), 5px 5px 0px 0px var(--dragon_line);
+}
+
+.dragon:hover {
+    background-color: var(--dragon_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--dragon_hover) !important;
+}
+
+/* type: dark */
+.dark {
+    background: var(--dark);
+}
+
+.dark::after {
+    box-shadow: 5px 0px 0px 0px var(--dark_line), 5px 5px 0px 0px var(--dark_line);
+}
+
+.dark:hover {
+    background-color: var(--dark_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--dark_hover) !important;
+}
+
+/* type: fairy */
+.fairy {
+    background: var(--fairy);
+}
+
+.fairy::after {
+    box-shadow: 5px 0px 0px 0px var(--fairy_line), 5px 5px 0px 0px var(--fairy_line);
+}
+
+.fairy:hover {
+    background-color: var(--fairy_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--fairy_hover) !important;
+}
+
+/* type: unknown */
+.unknown {
+    background: var(--unknown);
+}
+
+.unknown::after {
+    box-shadow: 5px 0px 0px 0px var(--unknown_line), 5px 5px 0px 0px var(--unknown_line);
+}
+
+.unknown:hover {
+    background-color: var(--unknown_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--unknown_hover) !important;
+}
+
+/* type: shadow */
+.shadow {
+    background: var(--shadow);
+}
+
+.shadow::after {
+    box-shadow: 5px 0px 0px 0px var(--shadow_line), 5px 5px 0px 0px var(--shadow_line);
+}
+
+.shadow:hover {
+    background-color: var(--shadow_hover) !important;
+    box-shadow: 5px 5px 10px 1px var(--shadow_hover) !important;
+}
