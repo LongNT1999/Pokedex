@@ -77,12 +77,12 @@ nav {
     z-index: -10;
 }
 
-nav li {
+nav li, nav a {
     padding-left: var(--large);
     color: var(--white);
 }
 
-nav li:hover {
+nav li:hover, nav a:hover {
     color: var(--orange);
 }
 
@@ -102,7 +102,6 @@ main {
 
 #type {
     /* width: 100%; */
-    margin-bottom: var(--regular);
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -116,6 +115,7 @@ section {
     flex-flow: row wrap;
     justify-content: center;
     gap: var(--small);
+    padding: var(--regular) 0;
 }
 
 .card {
@@ -146,6 +146,7 @@ section {
 .card img {
     /* width: var(--card_width); */
     transition: var(--time);
+    overflow: hidden;
 }
 
 .card li {
@@ -164,6 +165,10 @@ section {
 
 .pink {
     color: var(--pink);
+}
+
+#pagination button{
+    margin-bottom: var(--small);
 }
 
 @media only screen and (max-width: 768px) {
